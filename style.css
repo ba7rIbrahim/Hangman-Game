@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Tahoma, Arial;
+}
+.container {
+  margin: 20px auto;
+  width: 80%;
+}
+.row {
+  display: flex;
+}
+hr {
+  border: 1px solid #EEE;
+}
+.game-info {
+  display: flex;
+}
+.game-info .game-name {
+  flex: 1;
+}
+.game-info .category {
+  flex: 1;
+  text-align: right;
+}
+.game-info .category span {
+  text-transform: capitalize;
+  color: #E91E63;
+  font-weight: bold;
+}
+.hangman-draw {
+  flex: 1;
+  background-color: #F8F8F8;
+  padding: 20px;
+  height: 324px;
+}
+.hangman-draw .the-draw {
+  width: 60px;
+  height: 280px;
+  border-bottom: 4px solid #222;
+  position: relative;
+  margin: auto;
+  left: -60px;
+  display: block;
+}
+.hangman-draw .the-stand {
+  position: absolute;
+  width: 4px;
+  background-color: #222;
+  height: 100%;
+  left: 50%;
+  margin-left: -2px;
+  display: none;
+}
+.hangman-draw .the-hang {
+  display: none;
+}
+.hangman-draw .the-hang:before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  background-color: #222;
+  width: 100px;
+  left: 30px;
+  top: 15px;
+}
+.hangman-draw .the-hang:after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  background-color: #222;
+  left: 130px;
+  top: 15px;
+}
+.hangman-draw .the-rope {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  left: 95px;
+  top: 45px;
+  border: 4px dashed #222;
+  display: none;
+}
+.hangman-draw .the-man .head {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid #222;
+  position: absolute;
+  left: 105px;
+  top: 55px;
+  display: none;
+}
+.hangman-draw .the-man .body {
+  position: absolute;
+  background-color: #222;
+  width: 4px;
+  height: 110px;
+  top: 102px;
+  left: 130px;
+  display: none;
+}
+.hangman-draw .the-man .hands {
+  display: none;
+}
+.hangman-draw .the-man .hands:before {
+  left: 85px;
+  transform: rotate(30deg);
+}
+.hangman-draw .the-man .hands:after {
+  left: 130px;
+  transform: rotate(-30deg);
+}
+.hangman-draw .the-man .hands:before,
+.hangman-draw .the-man .hands:after {
+  content: '';
+  width: 50px;
+  position: absolute;
+  height: 4px;
+  background-color: #222;
+  top: 140px;
+}
+.hangman-draw .the-man .legs {
+  display: none;
+}
+.hangman-draw .the-man .legs:before {
+  left: 85px;
+  transform: rotate(-30deg);
+}
+.hangman-draw .the-man .legs:after {
+  left: 130px;
+  transform: rotate(30deg);
+}
+.hangman-draw .the-man .legs:before,
+.hangman-draw .the-man .legs:after {
+  content: '';
+  width: 50px;
+  position: absolute;
+  height: 4px;
+  background-color: #222;
+  top: 220px;
+}
+.hangman-draw.wrong-1 .the-stand {
+  display: block;
+}
+.hangman-draw.wrong-2 .the-hang {
+  display: block;
+}
+.hangman-draw.wrong-3 .the-rope {
+  display: block;
+}
+.hangman-draw.wrong-4 .head {
+  display: block;
+}
+.hangman-draw.wrong-5 .body {
+  display: block;
+}
+.hangman-draw.wrong-6 .hands {
+  display: block;
+}
+.hangman-draw.wrong-7 .legs {
+  display: block;
+}
+.letters {
+  flex: 1;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+}
+.letters.finishGame {
+  pointer-events: none;
+}
+.letters li {
+  text-transform: uppercase;
+  list-style: none;
+  background-color: #0288D1;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 6px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.letters-guess {
+  display: flex;
+  background-color: #F8F8F8;
+  text-align: center;
+  justify-content: center;
+}
+.split-letter {
+  list-style: none;
+  background-color: #fff;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border-bottom: 3px solid #0288D1;
+}
+.space {
+  list-style: none;
+  width: 15px;
+  height: 3px;
+  background-color: #0288D1;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 3px;
+  margin: 15px 10px 0px 10px;
+}
+.opacity-hidden {
+  background-color: #222;
+  opacity: .5;
+  pointer-events: none;
+
+}
